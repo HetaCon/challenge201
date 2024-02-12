@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Shardee;
+    src: url(../media/fonts/Shardee.ttf);
+  }
+
+body{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(../media/images/sailormoonbackground.webp);
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.flex-item{
+    width: 200px;
+    height: 200px;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 10px;
+    font-family: Shardee;
+    font-size: 32px;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-item img{
+    width: 75%;
+}
+
+.flex-item .img-caption{
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#moon{
+    border: 3px solid #032A6D;
+    background-color: #01449D;
+    color: #F9FFFF;
+}
+
+#moon img{
+    border: 2px solid #8F8AAA;
+    animation: glow 10s infinite;
+}
+
+#mercury{
+    border: 3px solid #0072A1;
+    background-color: #00A7EF;
+    color: #C9E9F6;
+}
+
+#mercury img{
+    animation: resize 10s;
+    transform-origin: bottom;
+}
+
+#mars{
+    border: 3px solid #770002;
+    background-color: #E50005;
+    color: #FA93A6;
+    animation: flickerfont 1.5s 3s 3;
+}
+
+#jupiter{
+    border: 3px solid #014B18;
+    background-color: #019535;
+    color: #70BB45;
+}
+
+#venus{
+    border: 3px solid #E95900;
+    background-color: #EF8F04;
+    color: #FFE14A;
+}
+
+/* Animation 1 */
+@keyframes glow{
+    0% {border: 2px solid #8F8AAA}
+    20% {border: 2px solid #C1CAE9;}
+    40% {border: 2px solid #F7FFFC}
+    50% {border: 2px solid #ffffff;
+        box-shadow: 0 0 .2rem #ffffff,
+            0 0 .2rem #ffffff,
+            0 0 1rem #C1CAE9,
+            0 0 0.8rem #C1CAE9,
+            inset 0 0 1.3rem #C1CAE9;}
+    60% {border: 2px solid #F7FFFC}
+    80% {border: 2px solid #C1CAE9;}
+    100% {border: 2px solid #8F8AAA}
+}
+
+/* Animation 2 */
+@keyframes resize{
+    0% {
+        transform: scale(1, 1);
+    }
+    30% {
+        transform: scale(0.75, 0.75);
+    }
+    70% {
+        transform: scale(1.15, 1.15);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+    
+}
+
+/* Animation 3 */
+@keyframes flickerfont{
+    0%{
+        color: #FA93A6;
+    }
+    30%{
+        color: #ffced7;
+    }
+    40%{
+        color: #ffeff2;
+        text-shadow: 0 0 6px #72108B, 0 0 7px #ffffff;
+    }
+    60%{
+        color: #ffced7;
+    }
+    70%{
+        color: #ffeff2;
+        text-shadow: 0 0 6px #72108B, 0 0 7px #ffffff;
+    }
+    100%{
+        color: #FA93A6;
+    }
+
+}
